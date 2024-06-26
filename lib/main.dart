@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:tcl_global/pages/email_registration_pag.dart';
 import 'package:tcl_global/pages/email_verification_page.dart';
 import 'package:tcl_global/pages/login_page.dart';
+import 'package:tcl_global/pages/password_reset_page.dart';
 
 void main() async {
   WidgetsFlutterBinding
@@ -36,7 +37,8 @@ class TCL_Global extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: LoginPage() //EmailVerificationPage(email: 'test@test.com'),
+        home:
+            PasswordResetPage() //EmailVerificationPage(email: 'test@test.com'),
         );
   }
 }
