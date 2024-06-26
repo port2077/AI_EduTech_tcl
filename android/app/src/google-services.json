@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "973476166791",
+    "project_id": "aiedutech-mobile-app",
+    "storage_bucket": "aiedutech-mobile-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973476166791:android:b7926fdacd229c05d18c22",
+        "android_client_info": {
+          "package_name": "com.example.tcl_global"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973476166791-r6jeqnsv03m1n4ebconk02raqccj4t11.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tcl_global",
+            "certificate_hash": "2b6864b7ca2d28e324fdeb4ce33ea72f3026ae96"
+          }
+        },
+        {
+          "client_id": "973476166791-nnhbqeaai05qi7pst437ekg3nvgdt3n9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2czSoUaMYiKLFNRW9IUeg3H8vJl_zp2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973476166791-nnhbqeaai05qi7pst437ekg3nvgdt3n9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,56 @@
+// buildscript {
+//     ext.kotlin_version = '2.0.0'
+//     google()
+// }
+
+// // plugins {
+// //     id("com.google.gms.google-services") version "4.4.2" apply false
+// // }
+// dependencies {
+//            classpath 'com.android.tools.build:gradle:4.1.0'  // Ensure this uses your current Gradle version
+//            classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.0'  // Ensure this uses your current Kotlin version
+//            classpath 'com.google.gms:google-services:4.3.10'  // Add this line for Google Services
+//            // other classpath dependencies
+//        }
+   
+
+buildscript {
+    ext.kotlin_version = '2.0.0'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        // START: FlutterFire Configuration
+        classpath 'com.google.gms:google-services:4.3.15'
+        // END: FlutterFire Configuration
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// dependencies {
+//            classpath 'com.android.tools.build:gradle:4.1.0'  // Ensure this is your current gradle plugin version
+//            classpath 'com.google.gms:google-services:4.3.10'  // Correct placement
+//        }
+
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
