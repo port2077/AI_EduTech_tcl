@@ -5,7 +5,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tcl_global/pages/demo_logout.dart';
+import 'package:tcl_global/screens/demo_logout.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:android_intent_plus/android_intent.dart';

@@ -1,0 +1,21 @@
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/images/TCL_Global_logo.png
+  color_dark: "#FFFFFF"
+  image_dark: assets/images/TCL_Global_logo.png
+
+  android_12:
+    image: assets/images/TCL_Global_logo.png
+    icon_background_color: "#FFFFFF"
+    image_dark: assets/images/TCL_Global_logo.png
+    icon_background_color_dark: "#FFFFFF"
+
+  fullscreen: true
+  android: true
+  ios: true
+  web: false
+
+  android_gravity: center
+  ios_content_mode: scaleAspectFit
+
+  android_screen_orientation: portrait

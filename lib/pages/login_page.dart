@@ -5,10 +5,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sign_in_button/sign_in_button.dart';
-import 'package:tcl_global/controllers/email_registration.dart';
-import 'package:tcl_global/controllers/google_sign_in.dart';
-import 'package:tcl_global/pages/demo_logout.dart';
-import 'package:tcl_global/pages/email_registration_pag.dart';
+import 'package:tcl_global/utils/email_registration.dart';
+import 'package:tcl_global/utils/google_sign_in.dart';
+import 'package:tcl_global/screens/demo_logout.dart';
+import 'package:tcl_global/screens/email_registration_pag.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

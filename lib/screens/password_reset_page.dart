@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import '../controllers/forget_password.dart';
+import '../utils/forget_password.dart';
 
 class PasswordResetPage extends StatefulWidget {
   // final String email;

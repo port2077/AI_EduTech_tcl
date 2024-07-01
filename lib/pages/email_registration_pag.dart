@@ -5,12 +5,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sign_in_button/sign_in_button.dart';
-import 'package:tcl_global/controllers/email_registration.dart';
-import 'package:tcl_global/controllers/google_sign_in.dart';
-import 'package:tcl_global/controllers/password_validator.dart';
-import 'package:tcl_global/pages/demo_logout.dart';
-import 'package:tcl_global/pages/email_verification_page.dart';
-import 'package:tcl_global/pages/login_page.dart';
+import 'package:tcl_global/utils/dialogue_box.dart';
+import 'package:tcl_global/utils/email_registration.dart';
+import 'package:tcl_global/utils/google_sign_in.dart';
+import 'package:tcl_global/utils/password_validator.dart';
+import 'package:tcl_global/screens/demo_logout.dart';
+import 'package:tcl_global/screens/email_verification_page.dart';
+import 'package:tcl_global/screens/login_page.dart';
 import 'package:email_validator/email_validator.dart';
 
 class EmailRegistrationPage extends StatefulWidget {
@@ -28,6 +29,7 @@ class _EmailRegistrationPageState extends State<EmailRegistrationPage> {
   final TextEditingController _confirmPasswordController =
       TextEditingController();
   bool _isPasswordVisible = false;
+  bool _isTermsAccepted = false;
 
   @override
   void dispose() {
@@ -94,10 +96,50 @@ class _EmailRegistrationPageState extends State<EmailRegistrationPage> {
                 SizedBox(height: 8),
                 Row(
                   children: [
-                    Checkbox(value: false, onChanged: (bool? value) {}),
+                    Checkbox(
+                      value: _isTermsAccepted,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          _isTermsAccepted = value ?? false;
+                        });
+                      },
+                    ),
                     Expanded(
-                      child: Text('Agree the terms of laws and privacy policy',
-                          style: TextStyle(fontSize: 12)),
+                      child: RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 12, color: Colors.black),
+                          children: [
+                            TextSpan(text: 'Agree the '),
+                            TextSpan(
+                              text: 'terms of laws',
+                              style: TextStyle(color: Colors.blue),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  TermsDialog.show(
+                                    context,
+                                    'Terms and Conditions',
+                                    'assets/markdown/terms_and_policy.md',
+                                  );
+                                  // Add your action for terms of laws here
+                                },
+                            ),
+                            TextSpan(text: ' and '),
+                            TextSpan(
+                              text: 'privacy policy',
+                              style: TextStyle(color: Colors.blue),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  // Add your action for privacy policy here
+                                  TermsDialog.show(
+                                    context,
+                                    'Privacy Policy',
+                                    'assets/markdown/privacy_policy.md',
+                                  );
+                                },
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),
